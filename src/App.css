@@ -26,8 +26,8 @@
 }
 
 .App-sidebar {
-  height: 100%;
-  background-color: red;
+  align-items: stretch;
+  background-color: tomato;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,6 @@
 
 .App-footer {
   font-size: small;
-  text-align: right;
   flex: 0;
   background-color: yellow;
   padding: 8px 4px 16px;
