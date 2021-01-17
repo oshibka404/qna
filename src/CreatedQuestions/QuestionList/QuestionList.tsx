@@ -5,7 +5,7 @@ import Question from '../Question/Question';
 function QuestionList(props: QuestionListProps) {
   return <div className="CreatedQuestions-list">
     {props.questions.map(
-      (item) => <Question {...item}/>
+      (item) => <Question key={item.id} {...item}/>
     )}
   </div>
 }

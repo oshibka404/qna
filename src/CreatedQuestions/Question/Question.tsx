@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import classNames from "classnames";
+import { deleteQuestion } from '../../store/questionsSlice';
 import './Question.css';
+import { useDispatch } from 'react-redux';
 
 function Question(props: QuestionProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const dispatch = useDispatch();
   return (
     <article 
       className={classNames('Question', {
@@ -15,7 +18,10 @@ function Question(props: QuestionProps) {
         <div className="Question-questionText">
           — {props.question}
         </div>
-        <button className="Question-delete">✖</button>
+        <button className="Question-delete" onClick={(e) => {
+          e.stopPropagation();
+          dispatch(deleteQuestion(props.id))
+        }}>✖</button>
       </div>
       <div className="Question-answer">
         — {props.answer}
