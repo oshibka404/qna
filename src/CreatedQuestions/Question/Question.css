@@ -16,5 +16,21 @@
 }
 
 .Question--expanded {
-    background-color: indianred;
+    background-color:seagreen;
 }
+
+.Question-question {
+    display: flex;
+    flex-direction: row;
+}
+
+.Question-questionText {
+    flex-grow: 1;
+}
+
+.Question-delete {
+    background-color: transparent;
+    border: none;
+}
+
+

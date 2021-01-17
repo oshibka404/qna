@@ -12,7 +12,10 @@ function Question(props: QuestionProps) {
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <div className="Question-question">
-        — {props.question}
+        <div className="Question-questionText">
+          — {props.question}
+        </div>
+        <button className="Question-delete">✖</button>
       </div>
       <div className="Question-answer">
         — {props.answer}
@@ -22,8 +25,9 @@ function Question(props: QuestionProps) {
 }
 
 interface QuestionProps {
-    question: string,
-    answer: string,
+    question: string;
+    answer: string;
+    id: number;
 }
 
 export default Question;

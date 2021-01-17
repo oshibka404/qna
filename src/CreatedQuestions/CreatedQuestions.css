@@ -4,4 +4,18 @@
 
 .CreatedQuestions-footer {
     padding: 8px 4px 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.CreatedQuestions-removeAll {
+    background-color: firebrick;
+}
+
+.CreatedQuestions-removeAll:hover {
+    background-color:tomato;
+}
+
+.CreatedQuestions-removeAll:active {
+    background-color: red;
 }

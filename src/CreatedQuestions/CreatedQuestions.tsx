@@ -23,7 +23,10 @@ function CreatedQuestions() {
               ? 'Sort chronologically'
               : 'Sort alphabetically'
           }</button>
-          <button onClick={() => dispatch(clear())}>Remove Questions</button>
+          <button 
+            className="CreatedQuestions-removeAll"
+            onClick={() => dispatch(clear())}
+          >Remove Questions</button>
         </div>
     </div>
   );

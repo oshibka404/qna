@@ -8,6 +8,7 @@ export const questionsSlice = createSlice({
       {
         question: 'How to add a question?',
         answer: 'Just use the form below!',
+        id: 0,
       }
     ],
   },
@@ -19,12 +20,19 @@ export const questionsSlice = createSlice({
       state.list = [];
     },
     add: (state, action) => {
-      state.list.push(action.payload);
+      state.list.push({
+        ...action.payload,
+        id: Date.now(),
+      });
     },
+    delete: (state, action) => {
+      state.list.filter((item) => item.id !== action.payload);
+    }
   },
 });
 
 export interface QuestionData {
+  id: number;
   question: string;
   answer: string;
 }
