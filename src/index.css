@@ -11,3 +11,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 8px 4px 12px;
+}
+
+a:link {
+  color: royalblue;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:visited {
+  color: fuchsia;
+}
+
+a:active {
+  color: firebrick;
+}
+
+input, textarea {
+  background-color:darksalmon;
+  padding: 8px 8px 16px;
+  border-radius: 0;
+  width: 100%;
+  border: 1px dotted white;
+}
+
+input:hover, textarea:hover {
+  background-color: coral;
+}
+
+input:focus, textarea:focus {
+  outline: 1px solid blue;
+}
+
+button {
+  font-size: larger;
+  padding: 8px;
+  background-color: green;
+  cursor: pointer;
+  border: none;
+  margin-right: 4px;
+}
+
+button:hover {
+  background-color: yellowgreen;
+}
+
+button:active {
+  background-color: red;
+}

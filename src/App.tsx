@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CreatedQuestions from './CreatedQuestions/CreatedQuestions';
+import Form from './Form/Form';
+import Summary from './Summary/Summary';
+import './Summary/Summary.tsx';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-layout">
+        <aside className="App-sidebar">
+          <h1 className="App-logo">Q|A</h1>
+          <section className="App-summary">
+            <Summary />
+          </section>
+          <footer className="App-footer">
+            Made by{' '}
+            <a href="https://github.com/oshibka404">Andrey Ozornin</a>{' '}
+            on 17th of January, 2020 as a test assignment for Studocu.
+          </footer>
+        </aside>
+        <div className="App-content">
+          <section className="App-questions">
+            <CreatedQuestions />
+          </section>
+          <section className="App-form">
+            <Form />
+          </section>
+        </div>
+      </div>
     </div>
   );
 }
