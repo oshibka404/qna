@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
-import classNames from "classnames";
+import { useDispatch } from 'react-redux';
+import { add } from '../store/questionsSlice';
 import './Form.css';
 
 function Form() {
   const [qText, setQText] = useState('');
   const [aText, setAText] = useState('');
-  const [count, setCount] = useState(0);
-  const validate = () => {
-
-  }
-  const reset = () => {
-    setQText('');
-    setAText('');
-  }
-  const submit = () => {
-    setCount(count+1);
-    reset();
-  }
+  const dispatch = useDispatch();
   return (
     <div className="Form">
         <h2>Create a new question</h2>
@@ -33,7 +23,10 @@ function Form() {
             }} />
         </label>
         <div className="Form-footer">
-            <button onClick={submit}>Submit</button> ({count} times)
+            <button onClick={() => dispatch(add({
+              question: qText,
+              answer: aText,
+            }))}>Submit</button>
         </div>
     </div>
   );

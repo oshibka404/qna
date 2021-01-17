@@ -1,4 +1,5 @@
 import React from 'react';
+import { QuestionData } from '../../store/questionsSlice';
 import Question from '../Question/Question';
 
 function QuestionList(props: QuestionListProps) {
@@ -11,11 +12,6 @@ function QuestionList(props: QuestionListProps) {
 
 interface QuestionListProps {
   questions: QuestionData[];
-}
-
-export interface QuestionData {
-  question: string;
-  answer: string;
 }
 
 export default QuestionList;

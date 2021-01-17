@@ -1,15 +1,14 @@
 import React from 'react';
+import { clear, selectIsSorted, selectQuestions, toggleSort } from '../store/questionsSlice';
+import { useSelector, useDispatch } from 'react-redux';
 import './CreatedQuestions.css';
 import EmptyQuestionList from './EmptyQuestionList/EmptyQuestionList';
-import QuestionList, { QuestionData } from './QuestionList/QuestionList';
+import QuestionList from './QuestionList/QuestionList';
 
 function CreatedQuestions() {
-  const questions: QuestionData[] = [
-    {
-      question: 'How to add a question?',
-      answer: 'Just use the form below!',
-    }
-  ];
+  const azSort = useSelector(selectIsSorted);
+  const questions = useSelector(selectQuestions);
+  const dispatch = useDispatch();
   return (
     <div className="CreatedQuestions">
         <h2>Created questions</h2>
@@ -19,8 +18,12 @@ function CreatedQuestions() {
             : <EmptyQuestionList />
         }
         <div className="CreatedQuestions-footer">
-          <button>Sort Questions</button>
-          <button>Remove Questions</button>
+          <button onClick={() => dispatch(toggleSort())}>{
+            azSort 
+              ? 'Sort chronologically'
+              : 'Sort alphabetically'
+          }</button>
+          <button onClick={() => dispatch(clear())}>Remove Questions</button>
         </div>
     </div>
   );
