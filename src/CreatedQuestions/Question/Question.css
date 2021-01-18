@@ -17,7 +17,7 @@
 }
 
 .Question--expanded {
-    background-color:seagreen;
+    background-color: seagreen;
 }
 
 .Question-question {
@@ -47,4 +47,8 @@
 
 .Question-edit:hover {
     background-color: cornflowerblue;
+}
+
+.Question-undo {
+    background-color: lightgrey;
 }
