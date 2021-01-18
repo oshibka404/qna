@@ -58,7 +58,7 @@ function Form() {
         }} />
       </label>
       <div className="Form-footer">
-        <button onClick={submitForm}>Submit</button>
+        <button onClick={submitForm}>Create question</button>
         <span className="Form-error">{errorText}</span>
       </div>
     </div>

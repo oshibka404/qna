@@ -19,14 +19,22 @@ export const questionsSlice = createSlice({
     clear: state => {
       state.list = [];
     },
-    add: (state, action) => {
+    add: (state, {payload}) => {
       state.list.push({
-        ...action.payload,
+        ...payload,
         id: Date.now(),
       });
     },
-    deleteQuestion: (state, action) => {
-      state.list = state.list.filter((item) => item.id !== action.payload);
+    deleteQuestion: (state, {payload}) => {
+      state.list = state.list.filter((item) => item.id !== payload);
+    },
+    edit: (state, {payload}) => {
+      state.list = state.list.map((item) => {
+        if (item.id === payload.id) {
+          return payload;
+        }
+        return item;
+      });
     }
   },
 });
@@ -44,7 +52,7 @@ interface AppState {
   }
 }
 
-export const { toggleSort, clear, add, deleteQuestion } = questionsSlice.actions;
+export const { toggleSort, clear, add, deleteQuestion, edit } = questionsSlice.actions;
 
 export const selectIsSorted = (state: AppState) => state.questions.AZSort;
 

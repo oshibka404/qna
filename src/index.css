@@ -43,6 +43,7 @@ input, textarea {
   border-radius: 0;
   width: 100%;
   border: 1px dotted white;
+  font-size: 24px;
 }
 
 input:hover, textarea:hover {
