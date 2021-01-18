@@ -1,7 +1,5 @@
 # QnA App
 
-Test assignment for Studocu
-
 ## Available Scripts
 
 In the project directory, you can run:
