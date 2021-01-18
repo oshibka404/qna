@@ -55,7 +55,7 @@ input:focus, textarea:focus {
 }
 
 button {
-  font-size: large;
+  font-size: larger;
   padding: 8px;
   background-color: green;
   cursor: pointer;

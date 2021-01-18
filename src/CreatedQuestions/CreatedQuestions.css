@@ -5,7 +5,14 @@
 .CreatedQuestions-footer {
     padding: 8px 4px 16px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+}
+
+@media only screen and (max-width: 400px) {
+    .CreatedQuestions-footer {
+        flex-direction: column;
+    }
 }
 
 .CreatedQuestions-removeAll {

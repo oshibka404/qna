@@ -23,13 +23,13 @@ function CreatedQuestions() {
         <div className="CreatedQuestions-footer">
           <button onClick={() => dispatch(toggleSort())}>{
             azSort 
-              ? 'Sort chronologically'
-              : 'Sort alphabetically'
+              ? 'Sort by time'
+              : 'Sort A‑Z'
           }</button>
           <button 
             className="CreatedQuestions-removeAll"
             onClick={() => dispatch(clear())}
-          >Remove Questions</button>
+          >Remove questions</button>
         </div>
     </div>
   );
