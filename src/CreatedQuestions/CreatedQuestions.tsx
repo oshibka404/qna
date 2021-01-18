@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './CreatedQuestions.css';
 import EmptyQuestionList from './EmptyQuestionList/EmptyQuestionList';
 import QuestionList from './QuestionList/QuestionList';
+import Tooltip from '../Tooltip/Tooltip';
 
 function CreatedQuestions() {
   const azSort = useSelector(selectIsSorted);
@@ -11,7 +12,9 @@ function CreatedQuestions() {
   const dispatch = useDispatch();
   return (
     <div className="CreatedQuestions">
-        <h2>Created questions</h2>
+        <Tooltip tooltipContent="Here you can find the created questions and their answers">
+          <h2>Created questions</h2>
+        </Tooltip>
         {
           questions.length > 0
             ? <QuestionList questions={questions}/>

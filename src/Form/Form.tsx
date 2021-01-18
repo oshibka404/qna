@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { add } from '../store/questionsSlice';
+import Tooltip from '../Tooltip/Tooltip';
 import './Form.css';
 
 function Form() {
@@ -44,7 +45,9 @@ function Form() {
   }
   return (
     <div className="Form">
-      <h2>Create a new question</h2>
+      <Tooltip tooltipContent="Here you can create questions and their answers">
+        <h2>Create a new question</h2>
+      </Tooltip>
       <label className="Form-label">
         Question:
         <input value={qText} onChange={(e) => {

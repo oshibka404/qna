@@ -1,0 +1,40 @@
+.Tooltip-target {
+    position: relative;
+}
+
+.Tooltip {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    left: 50px;
+    top: 100%;
+    margin-top: 20px;
+    background-color: lightyellow;
+    border: 2px solid violet;
+    display: none;
+    padding: 4px 2px 6px;
+}
+
+.Tooltip-target:hover .Tooltip {
+    display: block;
+}
+
+.Tooltip::before, .Tooltip::after {
+    content: '';
+    position: absolute;
+    border-width: 0 20px 20px;
+    border-color: violet transparent;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -20px;
+}
+.Tooltip::before {
+    margin-bottom: 2px;
+}
+.Tooltip::after {
+    margin-bottom: -1px;
+    border-color: lightyellow transparent;
+}
